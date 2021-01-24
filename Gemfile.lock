@@ -72,7 +72,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -88,7 +88,7 @@ GEM
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
-    jbuilder (2.10.1)
+    jbuilder (2.11.1)
       activesupport (>= 5.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -178,7 +178,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    thor (1.0.1)
+    thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -215,7 +215,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.11)
-  rails (~> 5.2.3)
+  rails (~> 5.2.4, >= 5.2.4.4)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -226,7 +226,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.0p-1
 
 BUNDLED WITH
-   2.1.4
+   2.1.0.pre.1
