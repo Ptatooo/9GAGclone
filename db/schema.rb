@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_122122) do
+ActiveRecord::Schema.define(version: 2021_01_26_222324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accounts", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_accounts_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
-  end
 
   create_table "accs", force: :cascade do |t|
     t.string "first_name"
@@ -39,8 +27,20 @@ ActiveRecord::Schema.define(version: 2021_01_24_122122) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_accs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accs_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "acc_id"
+    t.bigint "post_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["acc_id"], name: "index_comments_on_acc_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "communities", force: :cascade do |t|
@@ -51,7 +51,39 @@ ActiveRecord::Schema.define(version: 2021_01_24_122122) do
     t.integer "total_members"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "summary"
     t.index ["acc_id"], name: "index_communities_on_acc_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "acc_id"
+    t.bigint "community_id"
+    t.string "title"
+    t.text "body"
+    t.integer "upvotes", default: 0
+    t.integer "downvotes", default: 0
+    t.integer "total_comments", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["acc_id"], name: "index_posts_on_acc_id"
+    t.index ["community_id"], name: "index_posts_on_community_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "acc_id"
+    t.bigint "community_id"
+    t.index ["acc_id"], name: "index_subscriptions_on_acc_id"
+    t.index ["community_id"], name: "index_subscriptions_on_community_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "acc_id"
+    t.bigint "post_id"
+    t.boolean "upvote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["acc_id"], name: "index_votes_on_acc_id"
+    t.index ["post_id"], name: "index_votes_on_post_id"
   end
 
 end
