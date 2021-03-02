@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
 
-  devise_for :accs
+  devise_for :accs, :controllers => { :omniauth_callbacks => "accs/omniauth_callbacks" }
+  
   get "u/:username" => "public#profile", as: :profile
   resources :communities do
   resources :posts
 end
+
+
 
 resources :subscriptions
 resources :comments, only: [:create]
