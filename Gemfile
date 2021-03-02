@@ -33,6 +33,9 @@ gem 'bootstrap', '~> 4.0.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'jquery-rails'
+
+require './Acc'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'omniauth-facebook'
