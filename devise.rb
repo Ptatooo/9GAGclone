@@ -31,7 +31,7 @@ config.omniauth :facebook, "426866928753908", "c025731ee95a9376c3c3363d2de16e47"
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
-require './Acc'
+config.eager_load_paths << Rails.root.join('lib')
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
