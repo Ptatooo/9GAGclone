@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/gc-production
+  database: <%= ENV['DATABASE_URL'] %>

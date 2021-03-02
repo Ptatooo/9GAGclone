@@ -13,5 +13,6 @@ resources :comments, only: [:create]
 post "post/vote" => "votes#create"
   root to: "public#index"
 
-
+  root to: "photos#index"
+  resources :photos
 end
