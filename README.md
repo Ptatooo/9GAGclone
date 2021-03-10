@@ -5,6 +5,9 @@
 </p>
 
 # Welcome to Rails
+#Welcome to my app 
+
+I made and app 9GAGclone and the name already tells you what it is. It is a clone page of a popular meme page that everone heard of. 
 
 ## What's Rails?
 
