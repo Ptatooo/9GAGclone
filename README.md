@@ -6,11 +6,11 @@
 
 # Welcome to Rails
 
-#Welcome to my app 
+# Welcome to my app 
 
 I made and app 9GAGclone and the name already tells you what it is. It is a clone page of a popular meme page that everone heard of. I made this app for my school project. Frontend andd backend are both in english.
 
-##Installation
+## Installation
 
 For the first installation run 
 
@@ -49,3 +49,7 @@ In the .env file set your variables:
     PASSWORD=smtpPass
 
 When using without account you can only see posts but cant interact with them, for more options create acccount in right-up corner and easily join communities and start meme-ing with others who share the same interestes.
+
+## Usage
+
+Just log in and you are good to go!
